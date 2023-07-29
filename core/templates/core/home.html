@@ -3,5 +3,12 @@
 {% block content %}
 
 <h3> inicio</h3>
+{% if request.user.is_authenticated %}
+    <br>
+    <h4>
+        {{user.username | upper}}, bienvenido
+    </h4>
+{% endif %}
+
 
 {% endblock %}

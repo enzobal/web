@@ -12,7 +12,12 @@
     <ul>
         <li><a href="{% url 'home' %}"> inicio2</a></li>
         <li><a href="{% url 'products' %}"> productos</a></li>
-        <li><a href=""> ingresar</a></li>
+        
+        {% if request.user.is_authenticated %}
+            <li><a href="{% url 'exit' %}"> salir</a></li>
+        {% else %}
+            <li><a href="{% url 'login' %}">Ingresar</a></li>
+        {% endif %}
     </ul>
     {% block content %}{% endblock %}
     

@@ -3,6 +3,18 @@
 {% block content %}
 
 <h3> LOGIN</h3>
+
 <br>
 
+<form action="" method="post">
+    {% csrf_token %}  <!-- #da la capacidad de seguridad en el formulario# -->
+
+    <input type="text" name="username" id="" placeholder="nombre de usuario aqui">
+    <br>
+    <input type="password" name="password" id="" placeholder="contraseña aqui">
+
+    <br>
+    <button type="submit">Iniciar Sesion </button>
+
+</form>
 {% endblock %}
